@@ -66,8 +66,6 @@ import Neumorphism 1.2
 If you are confused, please refer to [Example-1](Example/example-1/) for a clearer understanding of what you should do.
 
 ## Components
-<details open>
-<summary> Available</summary>
 
 - [x] Button
 - [x] Radio Button
@@ -87,19 +85,13 @@ If you are confused, please refer to [Example-1](Example/example-1/) for a clear
 - [x] StackView
 - [x] ComboBox
 ---
-- [x] AdvancedRectangle
 - [x] HorizontalSeparator
 - [x] Custom Neumorphic shape
-
-</details>
-
-<!-- <details open>
-<summary> Pending</summary>
-</details> -->
 
 ## Issues
 
 Please file an issue on [issues page](https://github.com/SMR76/qml-neumorphism) if you have any problems.
 
 ## Documentation
+
 no document provided yet.
