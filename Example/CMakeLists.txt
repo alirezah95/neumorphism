@@ -12,3 +12,6 @@ add_subdirectory(
 add_subdirectory(
     "./example-4"
 )
+add_subdirectory(
+    "./example-5"
+)
