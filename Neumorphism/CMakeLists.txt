@@ -19,6 +19,10 @@ qt_add_shaders(neumorphism "neumorphism-shaders"
     FILES
         Shaders/round-out-effect.frag
         Shaders/round-in-effect.frag
+        Shaders/advanced-rectangle.frag
+        Shaders/box-shadow.frag
+        Shaders/dashed-rectangle.frag
+        Shaders/dashed-ring.frag
 )
 
 if (TARGET ${PROJECT_NAME} AND NOT PROJECT_NAME STREQUAL "neumorphism" )

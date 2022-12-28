@@ -21,19 +21,6 @@ Control {
             readonly property real dashWidth: control.dashWidth / width / 2
             readonly property color color: control.palette.base;
 
-            fragmentShader: "
-                #version 330
-                varying highp vec2 qt_TexCoord0;
-                uniform highp float qt_Opacity;
-                uniform highp float count;
-                uniform highp float dashWidth;
-                uniform highp vec4 color;
-
-                void main() {
-                    highp vec2 normal = qt_TexCoord0 - vec2(0.5);
-                    gl_FragColor = color;
-                    highp float ticks = smoothstep(0,0.001 * count, -abs(fract(qt_TexCoord0.x * count) - 0.5) + dashWidth * count);
-                    gl_FragColor = gl_FragColor * ticks;
-                }"
+            fragmentShader: "qrc:/Neumorphism/Shaders/dashed-rectangle.frag.qsb"
         }
 }

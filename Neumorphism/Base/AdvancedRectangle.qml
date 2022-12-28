@@ -17,7 +17,7 @@ Item {
         width: control.width;
         height: control.height;
 
-        readonly property bool hasGradient: gradient.length > 1;
+        readonly property int hasGradient: gradient.length > 1;
         readonly property color color: control.color
         readonly property color c0: hasGradient ? gradient[0].color: "#fff";
         readonly property color c1: hasGradient ? gradient[1].color: "#fff";
@@ -65,40 +65,6 @@ Item {
          * Isn't there any overflow here?
          */
 
-        fragmentShader: "
-            uniform highp float qt_Opacity;
-            varying highp vec2 qt_TexCoord0;
-            uniform highp vec2 ratio;
-            uniform lowp bool hasGradient;
-            uniform highp vec4 radius;
-            uniform highp vec4 color;
-            uniform highp vec4 c0;
-            uniform highp vec4 c1;
-            uniform highp vec2 s0;
-            uniform highp vec2 s1;
-
-            void main() {
-                // TextCoord is normalized based on item size.
-                highp vec2 center = ratio / 2.0;
-                highp vec2 coord = ratio * qt_TexCoord0;
-                highp vec2 s0 = s0 * ratio;
-                highp vec2 s1 = s1 * ratio;
-                // This part sets the gradient color if one exists; otherwise, it just sets the color.
-                if(hasGradient) {
-                    highp float d = distance(s0,s1);
-                    highp float angle = (s0.x - s1.x)/((s1.y - s0.y) == 0.0 ? 0.001 : s1.y - s0.y);
-                    highp float line = angle * (coord.x - (s0.x+s1.x) / 2 ) + (s0.y + s1.y) / 2.0 - coord.y;
-                    highp float dist = line / sqrt(angle * angle + 1.0);
-                    highp float rotflag = (s0.y > s1.y) ? -1.0 : 1.0;
-                    gl_FragColor = mix(c1, c0, smoothstep(0.0, 2.0 * d, rotflag * dist + d));
-                } else {
-                    gl_FragColor = color ;
-                }
-                // Create border radius.
-                highp float radius[4] = float[4](radius.x, radius.y, radius.z, radius.w);
-                highp int area = int(mod(-atan(coord.x - center.x, coord.y - center.y) * 0.636 + 3, 4.0));
-                highp float dist = length(max(abs(center - coord) - center + radius[area], 0.0)) - radius[area];
-                gl_FragColor = gl_FragColor * smoothstep(0.0, 0.01, - dist + 0.001) * qt_Opacity;
-            }"
+        fragmentShader: "qrc:/Neumorphism/Shaders/advanced-rectangle.frag.qsb"
     }
 }
