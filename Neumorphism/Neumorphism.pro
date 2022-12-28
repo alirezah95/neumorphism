@@ -1,5 +1,5 @@
 TEMPLATE = lib
-QT += qml quick quickcontrols2
+QT += qml quick quickcontrols2 core5compat
 CONFIG += qt plugin
 
 include(Neumorphism.pri)
