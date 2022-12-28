@@ -3,9 +3,9 @@
 // https://smr76.github.io
 
 import QtQuick 2.15
-import QtQuick.Templates 2.15 as T
+import QtQuick.Controls 2.15
 
-T.TextArea {
+TextArea {
     id: control
 
     implicitWidth: Math.max(contentWidth + leftPadding + rightPadding,

@@ -4,10 +4,10 @@
 
 
 import QtQuick 2.15
-import QtQuick.Templates 2.15 as T
+import QtQuick.Controls 2.15
 import QtQuick.Controls  2.15 as QQC
 
-T.RangeSlider {
+RangeSlider {
     id: control
 
     implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,
@@ -24,7 +24,7 @@ T.RangeSlider {
      * TODO: move handles to seprate componnent.
      */
 
-    first.handle: T.Control {
+    first.handle: Control {
         x: control.leftPadding + (control.horizontal ? control.first.visualPosition * (control.availableWidth - width) : (control.availableWidth - width) / 2)
         y: control.topPadding + (control.horizontal ? (control.availableHeight - height) / 2 : control.first.visualPosition * (control.availableHeight - height))
 
@@ -65,7 +65,7 @@ T.RangeSlider {
         }
     }
 
-    second.handle: T.Control {
+    second.handle: Control {
         x: control.leftPadding + (control.horizontal ? control.second.visualPosition * (control.availableWidth - width) : (control.availableWidth - width) / 2)
         y: control.topPadding  + (control.horizontal ? (control.availableHeight - height) / 2 : control.second.visualPosition * (control.availableHeight - height))
 

@@ -3,11 +3,11 @@
 // https://smr76.github.io
 
 import QtQuick 2.15
-import QtQuick.Templates 2.15 as T
+import QtQuick.Controls 2.15
 import Neumorphism 1.0
 import "Base"
 
-T.RadioButton {
+RadioButton {
     id: control
 
     implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,

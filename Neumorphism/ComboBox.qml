@@ -5,9 +5,9 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Window 2.15
-import QtQuick.Templates 2.15  as T
+import QtQuick.Controls 2.15
 
-T.ComboBox {
+ComboBox {
     id: control
 
     implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,
@@ -68,7 +68,7 @@ T.ComboBox {
         opacity: enabled ? 1 : 0.3
     }
 
-    contentItem: T.TextField {
+    contentItem: TextField {
         leftPadding: !control.mirrored ? 12 : 13
         rightPadding: control.mirrored ? 12 : 13
         leftInset: 7; topInset: 7; bottomInset: 7; rightInset: 13
@@ -116,7 +116,7 @@ T.ComboBox {
         Behavior on opacity { NumberAnimation { duration: 100 } }
     }
 
-    popup: T.Popup {
+    popup: Popup {
         y: control.height
         width: control.width
         height: Math.min(contentItem.implicitHeight, control.Window.height - y - control.y)
@@ -128,7 +128,7 @@ T.ComboBox {
             height: control.popup.visible ? implicitHeight : 10
             currentIndex: control.highlightedIndex
             highlightMoveDuration: 0
-            T.ScrollIndicator.vertical: ScrollIndicator { }
+            ScrollIndicator.vertical: ScrollIndicator { }
 
             NumberAnimation on spacing {
                 running:  control.popup.visible
