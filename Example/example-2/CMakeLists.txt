@@ -52,7 +52,7 @@ target_link_directories(${PROJECT_NAME} PRIVATE
 
 # Next line is required for Qml Preview on Linux to be able to load the module
 target_link_libraries(${PROJECT_NAME} PRIVATE
-    Neumorphism
+    neumorphism
 )
 
 target_link_libraries(example-2 PRIVATE 
