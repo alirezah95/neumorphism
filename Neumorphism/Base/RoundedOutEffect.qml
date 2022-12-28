@@ -41,6 +41,6 @@ Item {
             return Math.min(Math.max(shadow.radius, shadow.spread), min) / whmax;
         }
 
-        fragmentShader: "qrc:/Neumorphism/Shaders/round-out-shadow.frag.qsb"
+        fragmentShader: "qrc:/Neumorphism/Shaders/round-out-effect.frag.qsb"
     }
 }

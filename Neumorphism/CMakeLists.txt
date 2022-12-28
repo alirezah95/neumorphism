@@ -17,7 +17,7 @@ qt_add_shaders(neumorphism "neumorphism-shaders"
     PREFIX
         "/Neumorphism/"
     FILES
-        "Shaders/round-out-shadow.frag"
+        "Shaders/round-out-effect.frag"
 )
 
 if (TARGET ${PROJECT_NAME} AND NOT PROJECT_NAME STREQUAL "neumorphism" )
