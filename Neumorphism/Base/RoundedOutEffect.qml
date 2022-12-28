@@ -41,35 +41,6 @@ Item {
             return Math.min(Math.max(shadow.radius, shadow.spread), min) / whmax;
         }
 
-        fragmentShader: "
-            uniform highp float qt_Opacity;
-            varying highp vec2 qt_TexCoord0;
-            uniform highp vec2 ratio;
-            uniform highp float shdiff;
-            uniform highp float angle;
-            uniform highp float offset;
-            uniform highp float spread;
-            uniform highp float radius;
-            uniform highp float smoothstp;
-            uniform highp vec4 color1;
-            uniform highp vec4 color2;
-
-            void main() {
-                // TextCoord is normalized based on item size.
-                highp vec2 center = ratio / 2.0;
-                highp vec2 coord = ratio * qt_TexCoord0;
-                // Normalize the coordinates to the center of the scene
-                highp vec2 ncoord = coord - center;
-                // Set shadow gradient
-                highp float slop = tan(angle);
-                highp float mult = 1.57079 < angle && angle < 4.7123 ? -1.0 : 1.0;
-                highp float ratio = smoothstep(0.0, shdiff, mult * (slop * ncoord.x + ncoord.y)/sqrt(slop * slop + 1.0) + shdiff/2.0);
-                gl_FragColor = mix(color1, color2, ratio);
-                // Creating shadow based on shadow offset and shadow spreads.
-                highp float dist = length(max(abs(center - coord) - center + radius, 0.0)) - radius;
-                gl_FragColor = gl_FragColor * smoothstep(0.0, spread, - dist + 0.001) * qt_Opacity;
-                // Clipping the scene to the circular region in the center.
-                gl_FragColor = gl_FragColor * smoothstep(0.0, smoothstp, dist + offset) * qt_Opacity;
-            }"
+        fragmentShader: "qrc:/Neumorphism/Shaders/round-out-shadow.frag.qsb"
     }
 }
