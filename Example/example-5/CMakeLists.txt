@@ -10,8 +10,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(QML_IMPORT_PATH
-    ${CMAKE_CURRENT_SOURCE_DIR}
-    "${CMAKE_CURRENT_BINARY_DIR}/Neumorphism"
+    ${CMAKE_SOURCE_DIR}
+    ${CMAKE_BINARY_DIR}/imports
 
     CACHE STRING "" FORCE
 )
@@ -47,14 +47,17 @@ else()
     endif()
 endif()
 
-target_link_directories(${PROJECT_NAME} PRIVATE
-    "${CMAKE_CURRENT_BINARY_DIR}/Neumorphism"
+add_subdirectory("../../Neumorphism"
+    "${CMAKE_BINARY_DIR}/Neumorphism"
 )
+#target_link_directories(${PROJECT_NAME} PRIVATE
+#    "${CMAKE_CURRENT_BINARY_DIR}/Neumorphism"
+#)
 
-# Next line is required for Qml Preview on Linux to be able to load the module
-target_link_libraries(${PROJECT_NAME} PRIVATE
-    neumorphism
-)
+## Next line is required for Qml Preview on Linux to be able to load the module
+#target_link_libraries(${PROJECT_NAME} PRIVATE
+#    neumorphism
+#)
 
 target_link_libraries(example-5
   PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick)
