@@ -23,6 +23,9 @@ qt_add_shaders(neumorphism "neumorphism-shaders"
         Shaders/box-shadow.frag
         Shaders/dashed-rectangle.frag
         Shaders/dashed-ring.frag
+        Shaders/fast-shadow-blur-vertext.vert
+        Shaders/fast-shadow-blur-fragment.frag
+        Shaders/fast-shadow-weight.frag
 )
 
 if (TARGET ${PROJECT_NAME} AND NOT PROJECT_NAME STREQUAL "neumorphism" )
