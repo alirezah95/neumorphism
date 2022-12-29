@@ -3,8 +3,6 @@
 layout(location=0) in vec4 qt_Vertex;
 layout(location=1) in vec2 qt_MultiTexCoord0;
 
-layout(binding = 1) uniform sampler2D source;
-
 layout(location=0) out vec2 qt_TexCoord0;
 layout(location=1) out vec2 qt_TexCoord1;
 layout(location=2) out vec2 qt_TexCoord2;
