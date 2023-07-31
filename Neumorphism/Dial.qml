@@ -4,10 +4,11 @@
 
 import QtQuick 2.15
 import QtQuick.Controls 2.15
-import QtQuick.Controls 2.15
+import QtQuick.Templates 2.15 as T
+
 import Neumorphism 1.0
 
-Dial {
+T.Dial {
     id: control
     property alias dashRing: dashRing
 

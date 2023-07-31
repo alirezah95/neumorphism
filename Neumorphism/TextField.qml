@@ -4,8 +4,11 @@
 
 import QtQuick 2.15
 import QtQuick.Controls 2.15
+import QtQuick.Templates 2.15 as T
 
-TextField {
+import Neumorphism
+
+T.TextField {
     id: control
 
     implicitWidth: implicitBackgroundWidth + leftInset + rightInset

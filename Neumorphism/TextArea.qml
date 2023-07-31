@@ -4,8 +4,11 @@
 
 import QtQuick 2.15
 import QtQuick.Controls 2.15
+import QtQuick.Templates 2.15 as T
 
-TextArea {
+import Neumorphism 1.0
+
+T.TextArea {
     id: control
 
     implicitWidth: Math.max(contentWidth + leftPadding + rightPadding,
