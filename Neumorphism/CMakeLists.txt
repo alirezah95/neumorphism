@@ -26,6 +26,7 @@ qt_add_qml_module(neumorphism
         Base/RoundedOutEffect.qml
         Base/Shadow.qml
         Base/Wave.qml
+        Base/NeumorphismRoundedRectangle.qml
 
         Neumorphism.qml
 
