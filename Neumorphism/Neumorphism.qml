@@ -7,8 +7,15 @@ pragma Singleton
 import QtQuick 2.15
 
 QtObject {
-    property color color:   '#f5f5f5';
-    property color accent:  '#7DC4FF';
+    property color  primary:        "#6970db"
+    property color  accent:         "#b01100"
+    property color  foreground:     "#646466"
+    property color  background:     "#ebecfe"
+    property int    elevation:      8
+
+    readonly property color disabledTextColor:      Qt.darker(background, 1.3)
+    readonly property color buttonHoverColor:       Qt.darker(background, 1.06)
+    readonly property color borderHoverColor:       Qt.darker(background, 1.15)
 
     function blend(color1, color2, alpha) {
         var color = color1;
