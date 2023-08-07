@@ -60,12 +60,12 @@ T.Button {
 
     background: NeumorphismRoundedRectangle {
         radianAngle: 35 / 57.2958
-        offset: control.enabled ? (control.pressed && control.hovered ? 6 : 12)
+        offset: control.enabled ? (control.down || (control.pressed && control.hovered) ? 6 : 12)
                                 : 2
         shadowRadius: 42
         radius: control.radius
 
-        color: control.hovered || control.pressed || !control.enabled
+        color: control.hovered || control.pressed || !control.enabled || control.down
                ? Neumorphism.buttonHoverColor
                : Neumorphism.background
     }
