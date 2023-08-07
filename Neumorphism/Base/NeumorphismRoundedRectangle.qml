@@ -10,6 +10,8 @@ Item {
     property real shadowRadius: 52
     property real radius: 8
     property color color: "#aaa"
+    property color topShadowColor: "#50423f30"
+    property color bottomShadowColor: "#fefefe"
 
     implicitWidth: 160
     implicitHeight: 56
@@ -23,7 +25,7 @@ Item {
 
         radius: parent.shadowRadius
         source: idRc
-        color: "#50423f30"
+        color: bottomShadowColor
         transparentBorder: true
     }
 
@@ -37,7 +39,7 @@ Item {
         radius: parent.shadowRadius
         source: idRc
 
-        color: "#fefefe"
+        color: topShadowColor
         transparentBorder: true
     }
 
