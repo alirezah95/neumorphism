@@ -11,7 +11,7 @@ Item {
     id: control
 
     property alias shadow: shadowEffect.shadow
-    property color color: Neumorphism.color
+    property color color: Neumorphism.background
 
     implicitWidth: 50
     implicitHeight: 50
